@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File Converter Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>📂 File Converter Pro</h1>
+    <p>Fast & Simple Conversions between ZIP, PDF, PPT, and Word</p>
+  </header>
+
+  <!-- Conversion Cards -->
+  <div class="container">
+    <div class="card">
+      <h3>ZIP → PDF</h3>
+      <input type="file" id="zipFile" accept=".zip">
+      <button onclick="convertZipToPdf()">Convert</button>
+    </div>
+
+    <div class="card">
+      <h3>PDF → PPT</h3>
+      <input type="file" id="pdfToPptFile" accept=".pdf">
+      <button onclick="convertPdfToPpt()">Convert</button>
+    </div>
+
+    <div class="card">
+      <h3>PPT → PDF</h3>
+      <input type="file" id="pptToPdfFile" accept=".ppt,.pptx">
+      <button onclick="convertPptToPdf()">Convert</button>
+    </div>
+
+    <div class="card">
+      <h3>Word → PDF</h3>
+      <input type="file" id="wordToPdfFile" accept=".doc,.docx">
+      <button onclick="convertWordToPdf()">Convert</button>
+    </div>
+  </div>
+
+  
+  <footer>
+    © 2025 File Converter Pro • All rights reserved
+    <p>Developed By Hussain Ali</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
