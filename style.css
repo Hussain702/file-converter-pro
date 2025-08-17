@@ -1,4 +1,4 @@
-<style>
+
     /* ---------- Reset ---------- */
     * {
       margin: 0;
@@ -12,24 +12,65 @@
     }
 
     /* ---------- Header ---------- */
-    header {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      padding: 40px 20px;
-      text-align: center;
-      color: white;
-      border-bottom: 4px solid #1e40af;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    }
-    header h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
+    /* ---------- Header ---------- */
+/* ---------- Header ---------- */
+header {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  padding: 20px 40px;
+  color: white;
+  border-bottom: 4px solid #1e40af;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left side logo */
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+/* Centered text */
+.header-text {
+  flex: 1; /* Take full remaining width */
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header-text p {
+  margin-top: 6px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  margin-top: 6px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
 
     /* ---------- Layout ---------- */
     .container {
@@ -100,4 +141,4 @@
       border-top: 1px solid #e2e8f0;
       margin-top: 60px;
     }
-  </style>
+  
