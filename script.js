@@ -1,4 +1,6 @@
 
+
+
     // ---------------- ZIP to PDF -----------------
     async function convertZipToPdf() {
       const fileInput = document.getElementById('zipFile').files[0];
@@ -65,3 +67,57 @@
       const pdfBytes = await pdfDoc.save();
       saveAs(new Blob([pdfBytes], { type: "application/pdf" }), "converted.doc.pdf");
     }
+
+
+// PNG → JPEG
+function convertPngToJpeg() {
+  const fileInput = document.getElementById("pngFile");
+  if (!fileInput.files.length) return alert("Please select a PNG file.");
+
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const img = new Image();
+    img.onload = function () {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+
+      canvas.toBlob(
+        blob => saveAs(blob, file.name.replace(/\.png$/i, ".jpg")),
+        "image/jpeg",
+        0.9
+      );
+    };
+    img.src = e.target.result; // Base64 ensures no CORS
+  };
+  reader.readAsDataURL(file);
+}
+
+// JPEG → PNG
+function convertJpegToPng() {
+  const fileInput = document.getElementById("jpegFile");
+  if (!fileInput.files.length) return alert("Please select a JPEG file.");
+
+  const file = fileInput.files[0];
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const img = new Image();
+    img.onload = function () {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+
+      canvas.toBlob(
+        blob => saveAs(blob, file.name.replace(/\.(jpg|jpeg)$/i, ".png")),
+        "image/png"
+      );
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}

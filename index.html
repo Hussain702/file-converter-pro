@@ -8,25 +8,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/parquet-wasm@latest/dist/esm/parquet_wasm.js"></script>
 </head>
 <body>
-
-  
   <header>
-  
-  <img src="logodatatricks.png" alt="File Converter Logo" class="logo">
-
-  
-  <div class="header-text">
-    <h1>📂 File Converter Pro</h1>
-    <p>Fast & Simple Conversions between ZIP, PDF, PPT, and Word</p>
-  </div>
-</header>
-
-
+    <img src="logodatatricks.png" alt="File Converter Logo" class="logo">
+    <div class="header-text">
+      <h1>📂 File Converter Pro</h1>
+      <p>Fast & Simple Conversions between ZIP, PDF, PPT, Word, CSV, Parquet, and Images</p>
+    </div>
+  </header>
 
   <div class="container">
+    <!-- Existing Cards -->
     <div class="card">
       <h3>ZIP → PDF</h3>
       <input type="file" id="zipFile" accept=".zip">
@@ -50,9 +45,29 @@
       <input type="file" id="wordToPdfFile" accept=".doc,.docx">
       <button onclick="convertWordToPdf()">Convert</button>
     </div>
+   
   </div>
 
   
+    
+  
+
+  <!-- ================= New Section: Image Conversions ================= -->
+  <h2 style="text-align:center; margin-top:30px;">🖼️ Image Conversions</h2>
+  <div class="container">
+    <div class="card">
+      <h3>PNG → JPEG</h3>
+      <input type="file" id="pngFile" accept=".png">
+      <button onclick="convertPngToJpeg()">Convert</button>
+    </div>
+
+    <div class="card">
+      <h3>JPEG → PNG</h3>
+      <input type="file" id="jpegFile" accept=".jpg,.jpeg">
+      <button onclick="convertJpegToPng()">Convert</button>
+    </div>
+  </div>
+
   <footer>
     © 2025 File Converter Pro • All rights reserved
     <p>Developed By Hussain Ali</p>
